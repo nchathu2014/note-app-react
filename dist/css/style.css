@@ -1,0 +1,44 @@
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+body{
+	background:#d31145;
+	padding: 20px;
+}
+
+#wrapper{
+	-webkit-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+    padding: 5px;
+    width:200px;
+			height:auto;
+			min-height:200px;
+			font-size:20px;
+			background-color:yellow;
+			font-family:"Shadows Into Light", "Arial"
+}
+
+#topWrapper{
+	width:200px;
+	height:auto;
+}
+
+#btnWrapper{
+	position:relative;
+	top: -40px;
+	right:-120px;
+	display: none;
+	z-index: 99999;
+    
+}
+
+#comment{
+	resize:none;
+	background-color: #ffff80;
+}
+
+.txtMessage{
+	text-align: justify;
+	word-break:break-all;
+}
+
+
