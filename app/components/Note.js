@@ -17,10 +17,15 @@ export default class Note extends React.Component{
 		{return (this.state.isEdit)?this._editDisplay():this._renderDisplay()}		
 	}
 
+
+
 	componentDidMount(){
 
 		this.TIME_FADE_IN=500;
 		this.TIME_FADE_OUT=200;
+		this.setState({
+			message:this.props.item
+		})
 		this.node=ReactDOM.findDOMNode(this.refs.btnWrapper);
 	}
 
@@ -35,6 +40,14 @@ export default class Note extends React.Component{
 		});
 	}
 
+	_clearText(){
+		var newText = this.refs.txtAreaRef.value="";
+		this.refs.txtAreaRef.focus();
+		this.setState({
+			message:newText
+		});
+	}
+
 	_saveNote(event){
 
 		var newText = this.refs.txtAreaRef.value
@@ -45,9 +58,9 @@ export default class Note extends React.Component{
 		});
 	}
 
-	_removeHandler(){
+	/*_removeHandler(){
 		console.log("_removeHandler");
-	}
+	}*/
 
 	_onMouseHandler(){
 	    $(this.node).fadeIn(this.TIME_FADE_IN);
@@ -69,8 +82,10 @@ export default class Note extends React.Component{
 				<div id="btnWrapper" ref={"btnWrapper"}>
 					<button onClick={this._editHandler.bind(this)} className='btn btn-sm btn-primary glyphicon glyphicon-pencil'>
 					</button>&nbsp;
-					<button onClick={this._removeHandler.bind(this)} className='btn btn-sm btn-danger glyphicon glyphicon-trash'>
+					<button onClick={this.props.removeNoteFunc} className='btn btn-sm btn-danger glyphicon glyphicon-trash'>
 					</button>
+
+
 				</div>
 			</div>
 
@@ -91,7 +106,11 @@ export default class Note extends React.Component{
 				  			  ref="txtAreaRef"
 				  			  defaultValue={this.state.message}>
 				  	</textarea>			
-				    <button onClick={this._saveNote.bind(this)} className="btn btn-sm btn-success glyphicon glyphicon-floppy-disk"></button>
+				    <button onClick={this._saveNote.bind(this)} 
+				    		className="btn btn-sm btn-success glyphicon glyphicon-floppy-disk"></button>
+				    		&nbsp;
+				    <button onClick={this._clearText.bind(this)} 
+				    		className="btn btn-sm btn-danger glyphicon glyphicon-option-horizontal"></button>
 			</div>
 		);
 	}
