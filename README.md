@@ -4,7 +4,7 @@ This is a simple note application build using ReactJS which will help you to und
 # Prerequisite
 Node (^5) , webpack and webpack-dev-server
 
-if you are having trouble with these follow the links to chekouts
+if you are having trouble to run the app install the following modules
 
 - Node -> https://nodejs.org 
 - webpack -> npm install -g webpack 
