@@ -13,3 +13,4 @@ if you are having trouble to run the app install the following modules
 # Run
 - npm install
 - npm start
+- http://localhost:7777 to view the app
