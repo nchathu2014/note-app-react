@@ -1,15 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Board from './components/Board';
+import Note from './components/Note';
 
-var noteList=[
-				"Note 1",
-				"Note 2",
-				"Note 3",
-				"Note 4"
-			]
+var noteList=[{"id":100,"text":"Nuwan with ReactJS"}]
 
 ReactDOM.render(
-	<Board noteList={noteList}/>,
+	<Note noteList={noteList}/>,
 	document.getElementById('container')
 );
